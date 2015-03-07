@@ -2,7 +2,7 @@
 
 _kinect-socket is a little x64 windows desktop application that streams KinectV2 body tracking datas using websocket and a simple JSON protocol_
 
-![Screenshot](https://bitbucket.org/field/139-sap-x-livenation/raw/feature-kinect-socket/production/apps/mirror/modules/kinect-socket/res/screen.png)
+![Screenshot](https://raw.githubusercontent.com/kikko/kinect2-socket/master/res/screen.png)
 
 ## features :
 
@@ -66,6 +66,6 @@ Setting up compilation for this module is fairly complicated for now as it's usi
 
 In order to compile, the OF and extras addons paths must be added to visual studio properties :
 
-![Screenshot](https://bitbucket.org/field/139-sap-x-livenation/raw/feature-kinect-socket/production/apps/mirror/modules/kinect-socket/res/p1.png)
+![Screenshot](https://raw.githubusercontent.com/kikko/kinect2-socket/master/res/p1.png)
 
-![Screenshot](https://bitbucket.org/field/139-sap-x-livenation/raw/feature-kinect-socket/production/apps/mirror/modules/kinect-socket/res/p2.png)
+![Screenshot](https://raw.githubusercontent.com/kikko/kinect2-socket/master/res/p2.png)
