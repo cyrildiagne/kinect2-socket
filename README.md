@@ -2,6 +2,8 @@
 
 _kinect2-socket is a little x64 windows desktop application that streams KinectV2 body tracking datas using websocket and a simple JSON protocol_
 
+It mostly intented to be used with its counterpart javascript client library *[kinect2-socket-client](https://github.com/kikko/kinect2-socket-client)*
+
 Made with [OpenFrameworks](http://www.openframeworks.cc)
 
 ![Screenshot](https://raw.githubusercontent.com/kikko/kinect2-socket/master/res/screen.png)
