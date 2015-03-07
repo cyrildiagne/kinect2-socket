@@ -1,0 +1,13 @@
+bin/Debug/*
+bin/Release/*
+build
+extern
+
+# Visual Studio
+*.sdf
+*.opensdf
+*.suo
+*.pdb
+*.ilk
+*.aps
+ipch/

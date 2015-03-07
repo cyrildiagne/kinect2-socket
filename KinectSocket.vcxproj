@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>emptyExample</RootNamespace>
+    <ProjectName>KinectSocket</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openFrameworksRelease64.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openFrameworksDebug64.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>$(KINECTSDK20_DIR)\inc;$(EXTERN_ADDONS)\ofxKinectForWindows2\src;$(OF_ROOT)\addons\ofxXmlSettings\src;$(OF_ROOT)\addons\ofxXmlSettings\libs;$(EXTERN_ADDONS)\ofxUI\src;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\jsoncpp;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\jsoncpp\json;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\libwebsockets\include\;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\openssl\openssl;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\include;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\src;$(EXTERN_ADDONS)\ofxLibwebsockets\src;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\libwebsockets\include\win32port;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\libwebsockets\include\win32port\win32helpers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>websockets_static.lib;ZLIB.lib;kinect20.face.lib;Kinect20.VisualGestureBuilder.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(KINECTSDK20_DIR)lib\x64;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\libwebsockets\lib\vs64\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <Version>0.2</Version>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>$(KINECTSDK20_DIR)\inc;$(EXTERN_ADDONS)\ofxKinectForWindows2\src;$(OF_ROOT)\addons\ofxXmlSettings\src;$(OF_ROOT)\addons\ofxXmlSettings\libs;$(EXTERN_ADDONS)\ofxUI\src;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\jsoncpp;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\jsoncpp\json;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\libwebsockets\include\;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\openssl\openssl;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\include;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\src;$(EXTERN_ADDONS)\ofxLibwebsockets\src;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\libwebsockets\include\win32port;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\libwebsockets\include\win32port\win32helpers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>websockets_static.lib;ZLIB.lib;kinect20.face.lib;Kinect20.VisualGestureBuilder.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(KINECTSDK20_DIR)lib\x64;$(EXTERN_ADDONS)\ofxLibwebsockets\libs\libwebsockets\lib\vs64\Release\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <Version>0.2</Version>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\jsoncpp\jsoncpp.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\src\Client.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\src\Connection.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\src\Events.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\src\Protocol.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\src\Reactor.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\src\Server.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUI2DGraph.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUI2DPad.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIBaseDraws.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIBiLabelSlider.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIButton.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUICanvas.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUICircleSlider.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIDragableLabelButton.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIDropDownList.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIEventArgs.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIFPS.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIFPSSlider.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIImage.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIImageButton.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIImageSampler.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIImageSlider.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIImageToggle.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUILabel.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUILabelButton.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUILabelToggle.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIMinimalSlider.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIMovingGraph.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIMultiImageButton.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIMultiImageToggle.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUINumberDialer.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIRadio.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIRangeSlider.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIRectangle.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIRotarySlider.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIScrollableCanvas.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUISlider.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUISortableList.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUISpacer.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUISpectrum.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUISuperCanvas.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUITabBar.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUITextArea.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUITextInput.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIToggle.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIToggleMatrix.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIValuePlotter.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIWaveform.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIWidget.cpp" />
+    <ClCompile Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIWidgetWithLabel.cpp" />
+    <ClCompile Include="$(OF_ROOT)\addons\ofxXmlSettings\libs\tinyxml.cpp" />
+    <ClCompile Include="$(OF_ROOT)\addons\ofxXmlSettings\libs\tinyxmlerror.cpp" />
+    <ClCompile Include="$(OF_ROOT)\addons\ofxXmlSettings\libs\tinyxmlparser.cpp" />
+    <ClCompile Include="$(OF_ROOT)\addons\ofxXmlSettings\src\ofxXmlSettings.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="src\Sockets.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(EXTERN_ADDONS)\ofxKinectForWindows2\ofxKinectForWindows2Lib\ofxKinectForWindows2Lib.vcxproj">
+      <Project>{f6008d6a-6d39-4b68-840e-e7ac8ed855da}</Project>
+    </ProjectReference>
+    <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
+      <Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\jsoncpp\json\json-forwards.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\jsoncpp\json\json.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\libwebsockets\include\libwebsockets.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\libwebsockets\include\win32port\win32helpers\getopt.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\libwebsockets\include\win32port\win32helpers\gettimeofday.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Client.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Connection.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Events.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Protocol.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Reactor.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Server.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\libs\ofxLibwebsockets\include\ofxLibwebsockets\Util.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxLibwebsockets\src\ofxLibwebsockets.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUI.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUI2DGraph.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUI2DPad.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIBaseDraws.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIBiLabelSlider.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIButton.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUICanvas.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUICircleSlider.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIDefines.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIDragableLabelButton.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIDropDownList.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIEventArgs.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIFPS.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIFPSSlider.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIImage.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIImageButton.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIImageSampler.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIImageSlider.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIImageToggle.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUILabel.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUILabelButton.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUILabelToggle.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIMinimalSlider.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIMovingGraph.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIMultiImageButton.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIMultiImageToggle.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUINumberDialer.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIOFWrapper.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIRadio.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIRangeSlider.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIRectangle.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIRotarySlider.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIScrollableCanvas.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUISlider.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUISortableList.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUISpacer.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUISpectrum.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUISuperCanvas.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUITabBar.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUITextArea.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUITextInput.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIToggle.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIToggleMatrix.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIUtils.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIValuePlotter.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIWaveform.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIWidget.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIWidgets.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIWidgetWithLabel.h" />
+    <ClInclude Include="$(EXTERN_ADDONS)\ofxUI\src\ofxUIWrapper.h" />
+    <ClInclude Include="$(OF_ROOT)\addons\ofxXmlSettings\libs\tinyxml.h" />
+    <ClInclude Include="$(OF_ROOT)\addons\ofxXmlSettings\src\ofxXmlSettings.h" />
+    <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\Sockets.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\icon.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
