@@ -1,4 +1,4 @@
-# kinect2-socket module
+# kinect2-socket
 
 _kinect2-socket is a little x64 windows desktop application that streams KinectV2 body tracking datas using websocket and a simple JSON protocol_
 
@@ -78,3 +78,6 @@ In order to compile, the OF and extras addons paths must be added to visual stud
 - ofxLibwebsockets
 - ofxUI
 
+### thanks to :
+
+- most progress on this was made during a project with [field.io](http://www.field.io/)
