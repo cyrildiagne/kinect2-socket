@@ -71,3 +71,10 @@ In order to compile, the OF and extras addons paths must be added to visual stud
 ![Screenshot](https://raw.githubusercontent.com/kikko/kinect2-socket/master/res/p1.png)
 
 ![Screenshot](https://raw.githubusercontent.com/kikko/kinect2-socket/master/res/p2.png)
+
+### dependencies :
+
+- ofxKinectForWindows2
+- ofxLibwebsockets
+- ofxUI
+
