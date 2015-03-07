@@ -1,6 +1,8 @@
-# kinect-socket module
+# kinect2-socket module
 
-_kinect-socket is a little x64 windows desktop application that streams KinectV2 body tracking datas using websocket and a simple JSON protocol_
+_kinect2-socket is a little x64 windows desktop application that streams KinectV2 body tracking datas using websocket and a simple JSON protocol_
+
+Made with [OpenFrameworks](http://www.openframeworks.cc)
 
 ![Screenshot](https://raw.githubusercontent.com/kikko/kinect2-socket/master/res/screen.png)
 
